@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PolyGlot Play - Interactive Language Learning</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Canvas Confetti library for high scores -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="logo-group">
+        <div class="logo-icon">
+          <i class="fa-solid fa-language"></i>
+        </div>
+        <div>
+          <h1 class="logo-title">PolyGlot Play</h1>
+          <p class="logo-subtitle">Learn English, Chinese & German</p>
+        </div>
+      </div>
+
+      <!-- User Stats Counter -->
+      <div class="stats-bar">
+        <div class="stat-item streak">
+          <i class="fa-solid fa-fire"></i>
+          <span id="streak-count">1</span>
+          <span class="stat-label">Day</span>
+        </div>
+        <div class="divider"></div>
+        <div class="stat-item xp">
+          <i class="fa-solid fa-trophy"></i>
+          <span id="score-count">0</span>
+          <span class="stat-label">XP</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Game Container -->
+  <main class="main-container">
+
+    <!-- Controls / Selectors -->
+    <section class="selectors-grid">
+      
+      <!-- Target Language Picker -->
+      <div class="card">
+        <label class="card-label">Target Language</label>
+        <div class="btn-grid" id="lang-selector">
+          <button onclick="setLanguage('zh')" id="lang-zh" class="selector-btn">
+            <span class="flag">🇨🇳</span>
+            <span class="btn-title">Chinese</span>
+          </button>
+          <button onclick="setLanguage('de')" id="lang-de" class="selector-btn">
+            <span class="flag">🇩🇪</span>
+            <span class="btn-title">German</span>
+          </button>
+          <button onclick="setLanguage('en')" id="lang-en" class="selector-btn">
+            <span class="flag">🇬🇧</span>
+            <span class="btn-title">English</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Game Mode Picker -->
+      <div class="card">
+        <label class="card-label">Practice Mode</label>
+        <div class="btn-grid" id="mode-selector">
+          <button onclick="setMode('quiz')" id="mode-quiz" class="selector-btn">
+            <i class="fa-solid fa-circle-question icon-quiz"></i>
+            <span class="btn-title">Quiz</span>
+          </button>
+          <button onclick="setMode('match')" id="mode-match" class="selector-btn">
+            <i class="fa-solid fa-clone icon-match"></i>
+            <span class="btn-title">Word Match</span>
+          </button>
+          <button onclick="setMode('builder')" id="mode-builder" class="selector-btn">
+            <i class="fa-solid fa-cubes icon-builder"></i>
+            <span class="btn-title">Sentence</span>
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Main Dynamic Interactive Arena -->
+    <section id="game-arena" class="arena-card">
+      <!-- JavaScript injects active mode UI here -->
+    </section>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
